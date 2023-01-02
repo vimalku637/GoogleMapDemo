@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.vrp.googlemapdemo">
+
+    <!--
+      The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+      Google Maps Android API v2, but you must specify either coarse or fine
+      location permissions for the 'MyLocation' functionality.
+   -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+    If you're targeting version 8.3 or later of the Google Play services SDK,
+    you don't need the WRITE_EXTERNAL_STORAGE permission. If you're targeting
+    earlier versions of the Google Play services SDK, you must request the
+    WRITE_EXTERNAL_STORAGE permission, in the manifest element.
+    -->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_location"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_location"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GoogleMapDemo"
+        tools:targetApi="31">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+             https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!--
+          Apache HTTP Legacy library
+          If you are using com.google.android.gms:play-services-maps:16.0.0 or below and your app
+          is targeting API level 28 (Android 9.0) or above, you must include the following declaration
+          within the <application> element of AndroidManifest.xml. Otherwise, skip this declaration.
+        -->
+
+        <!--<uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />-->
+
+        <activity
+            android:name=".MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

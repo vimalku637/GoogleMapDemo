@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">G-Maps</string>
+    <string name="title_activity_maps">G-Maps</string>
+    <string name="gps_network_not_enabled">GPS not enabled</string>
+    <string name="open_location_settings">Settings</string>
+    <string name="no_thanks">No, thanks</string>
+</resources>
